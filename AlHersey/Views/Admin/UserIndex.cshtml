@@ -1,0 +1,108 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "UserIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row" style="margin-top:50px;">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+
+       
+                    <i class="fa fa-picture"></i>KULLANICI LİSTESİ
+                </div>
+               
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                        @Html.DisplayNameFor(model => model.UserID)       
+                                </th>
+                                <th>
+                        @Html.DisplayNameFor(model => model.NameSurname)
+                                </th>
+                                <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+
+                        @Html.DisplayNameFor(model => model.Password)
+                                </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telephone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InvoiceAddress)
+                    </th>
+                    <th>
+
+                        @Html.DisplayNameFor(model => model.IsAdmin)
+                    </th>
+                    <th>
+
+                        @Html.DisplayNameFor(model => model.Active)
+                    </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                            @item.UserID
+                                    </td>
+                                    <td>
+                            @item.NameSurname
+                                    </td>
+                        <td>
+                            @item.Email
+                        </td>
+                           <td>
+                            @item.Password
+                                    </td>
+                                       <td>
+                            @item.Telephone
+                                    </td>
+                                       <td>
+                            @item.InvoiceAddress
+                                    </td>
+                                       <td>
+                            @item.IsAdmin
+                                    </td>
+                                  
+
+                                    <td>
+                                        @if (@item.Active == true)
+                                        {
+                                            <label>AKTİF</label>
+                                        }
+                                        else
+                                        {
+                                            <label>PASİF</label>
+                                        }
+
+                                    </td>
+                                 
+
+                                    <td>
+                                        <a asp-action="UserDetails" asp-route-id="@item.UserID" asp-controller="Admin" class="btn btn-info">DETAY</a>
+                                    </td>
+
+                                   
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END CONDENSED TABLE PORTLET-->
+    </div>
+</div>

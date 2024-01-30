@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "OrderIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row" style="margin-top:50px;">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+
+
+        <i class="fa fa-picture"></i>SİPARİŞ LİSTESİ
+    </div>
+    
+</div>
+<div class="portlet-body">
+    <div class="table-scrollable">
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OrderID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OrderDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OrderGroupGUID)
+                    </th>
+                    <th>
+
+                        @Html.DisplayNameFor(model => model.UserID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Qantity)
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.OrderID
+                        </td>
+                        <td>
+                            @item.OrderDate
+                        </td>
+                        <td>
+                            @item.OrderGroupGUID
+                        </td>
+                        <td>
+                            @item.UserID
+                        </td>
+                        <td>
+                            @item.ProductID
+                        </td>
+                        <td>
+                            @item.Qantity
+                        </td>
+                       
+
+                  
+
+
+                        <td>
+                            <a asp-action="OrderDetails" asp-route-id="@item.OrderID" asp-controller="Admin" class="btn btn-info">DETAY</a>
+                        </td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+        </div>
+<!-- END CONDENSED TABLE PORTLET-->
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "ContactUs";
+    Layout = "~/Views/Shared/Default_Layout.cshtml";
+}
+
+<!-- map bannar area Start  -->
+<div class="map-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12507.308039877755!2d27.0682976!3d38.3992487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbdd12bdc22863%3A0x20701b2d706a60f0!2zxLBzdGlueWVQYXJrIMSwem1pcg!5e0!3m2!1str!2str!4v1703631620090!5m2!1str!2str" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+                <div class="map-info-area">
+                    <h3>BİZİMLE İLETİŞİME GEÇİN</h3>
+                    <p>Danışmak istediğiniz konu hakkında bizimle iletişime geçebilirsiniz.</p>
+                    <div class="clear"></div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                            <div class="contact-p">
+                                <form>
+                                    <input type="text" placeholder="Name *">
+                                    <input type="text" placeholder="Email *">
+                                    <input type="text" placeholder="Subject">
+                                    <textarea cols="30" rows="10" placeholder="HENÜZ ŞİRKETLEŞİLMEDİĞİ İÇİN MAİLLERİNİZ BU SAYFADAN GÖNDERİLEMEZ... *"></textarea>
+                                    <div class="submit control-group">
+                                        <div class="controls">
+                                            <button onclick="window.location.href='/Home/ContactUs'" class="btn btn-large btn-primary submit">GÖNDER</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="c-right-area">
+                                <h6 class="sppb-addon-title">İLETİŞİM</h6>
+                                <div class="sppb-addon-content">
+                                    <p><span><em class="fa fa-map-marker"></em></span> @await Component.InvokeAsync("Adress")</p>
+                                    <p><span><em class="fa fa-envelope"></em></span> @await Component.InvokeAsync("Email")</p>
+                                    <p><span><em class="fa fa-phone"></em></span> @await Component.InvokeAsync("Telephone")</p>
+                                </div>
+                            </div>
+                            <div class="c-right-area r-next">
+                                <h6 class="sppb-addon-title">ÇALIŞMA SAATLERİ</h6>
+                                <p>Pazartesi &ndash; Cuma: 09.00-20.00 Cumartesi: 09.00-17.00 </p>
+                                <div class="single-icons">
+                                    <ul>
+                                        <li><a data-toggle="tooltip" data-placement="top" title="Follow us Facebook" class="black-tooltip s-1" href="contact.html#"><i class="fa fa-facebook"></i> </a></li>
+                                        <li><a data-toggle="tooltip" data-placement="top" title="Follow us Twitter" class="black-tooltip s-2" href="contact.html#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a data-toggle="tooltip" data-placement="top" title="Follow us Google-plus" class="black-tooltip s-3" href="contact.html#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a data-toggle="tooltip" data-placement="top" title="Follow us Pinterest" class="black-tooltip s-4" href="contact.html#"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a data-toggle="tooltip" data-placement="top" title="Follow us Behance" class="black-tooltip s-5" href="contact.html#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

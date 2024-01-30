@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Message>
+@{
+    ViewData["Title"] = "MessageIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row" style="margin-top:50px;">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+
+       
+                    <i class="fa fa-picture"></i>MESAJLAR LİSTESİ
+                </div>
+               
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                        @Html.DisplayNameFor(model => model.MessageID)       
+                                </th>
+                                <th>
+                        @Html.DisplayNameFor(model => model.UserID)
+                                </th>
+                                <th>
+                        @Html.DisplayNameFor(model => model.Content)
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                            @item.MessageID
+                                    </td>
+                                    <td>
+                            @item.UserID
+                                    </td>
+                        <td>
+                            @item.Content
+                        </td>
+                           
+                                    <td>
+                            <a asp-action="MessageDetails" asp-route-id="@item.MessageID" asp-controller="Admin" class="btn btn-info">DETAY</a>
+                                    </td>
+
+                                   
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END CONDENSED TABLE PORTLET-->
+    </div>
+</div>

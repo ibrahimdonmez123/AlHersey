@@ -1,0 +1,65 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "OrderDelete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row" style="margin-top:50px;">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+
+
+        <br />
+        <br />
+        <!-- BEGIN CONDENSED TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-picture"></i>
+                </div>
+                
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    @Html.DisplayFor(model => model.OrderID)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.OrderDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.OrderGroupGUID)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.UserID)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.ProductID)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.Qantity)
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                    </table>
+                    <form class="form-horizontal" role="form">
+
+
+
+                        <a asp-action="OrderIndex" class="btn btn-primary">SİPARİŞ LİSTESİ</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- END CONDENSED TABLE PORTLET-->
+    </div>
+</div>
+
